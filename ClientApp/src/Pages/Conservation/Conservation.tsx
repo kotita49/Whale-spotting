@@ -24,16 +24,17 @@ export function Conservation(): JSX.Element {
   return (
     <div className="content-container">
       <div className="container-fluid">
-        <h1 className="title">Conservation</h1>
-        <p className="text-justify">
-          Some good work has been done in recent decades to reverse the trend of
-          almost inevitable extinction for some species of cetaceans.
-          Unfortunately, whales and dolphins continue to be threatened by:
-        </p>
+          <h1 className="title">Conservation</h1>
+          <p className="text-justify body-text">
+            Some good work has been done in recent decades to reverse the trend of
+            almost inevitable extinction for some species of cetaceans.
+            Unfortunately, whales and dolphins continue to be threatened by:
+          </p>
       </div>
 
-      <div className="container">
-        <div className="row">
+      <div className="container-card">
+
+       <div className="row">
           {ConservationData.map((x) => ConservationCard(x))}
         </div>
       </div>

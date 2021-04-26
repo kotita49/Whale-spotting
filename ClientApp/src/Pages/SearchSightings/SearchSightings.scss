@@ -1,7 +1,18 @@
 @import "../../Styles/constants";
 @import '../../Styles/styles';
 
+.content-container:not(.title) {
+  font-family: $body-font;
+  font-weight: 300;
+}
 
+.results-table {
+  width: 100%;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
 
 .search-sighting-page {
   margin: $gutter-width;
@@ -26,25 +37,62 @@
      @include primaryButton;
   }
 }
-
-
+tr:first-child{
+  background-color: $dark-bg
+}
 tr:nth-child(even){
-
   background-color: $accent-color
 }
-
-td,th {
-  padding-left: 7.5px;
-  padding-right: 7.5px;
+.results-table{
+  background-color: $accent-color-dark
 }
 
-.update-sighting-form{
+
+td,th {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.update-search-form{
   .form-label {
     padding: 7.5px
   }
   .form-input{
     margin-left: 5px
   }
-
-
+  .update-search-button{
+    @include primaryButton;
+    margin-left: 16px
+  }
 }
+
+.pagination{
+  position: relative;
+  left: 50%;
+  font-size: x-large;
+  padding-top: 10px;
+  width: fit-content;
+
+  .page{
+    padding:5px
+  }
+  .previous-button,.next-button{
+    color: $light-text;
+    padding: 5px
+  }
+  .previous-button{
+    :hover > & {
+      cursor: pointer;
+      
+    }
+  }
+  
+  .next-button{
+    :hover > & {
+      cursor: pointer;
+      
+    }
+  }
+ 
+}
+

@@ -18,7 +18,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="content-container">
+    <div className="content-container" id="home-container">
       <h1 className="title">Welcome to the World of Whale Watching!</h1>
 
       {/*Fact of the Day*/}
@@ -57,22 +57,21 @@ function Home() {
             ></iframe>
           </div>
         </div>
-        <div className="whale-sightings-container">
+        <div className="whale-sightings-container" id="whale-sightings-container">
           <h2 className="sub-heading">Recent Sightings</h2>
           {/* this table is a placeholder, feel free to delete when inserting the actual table */}
-          <table className="sightings-table">
+          <table className="sightings-table body-text" id="sightings-table">
             <thead>
               <tr>
                 <td>Location</td>
                 <td>Species</td>
-                <td>Number of Whales Spotted</td>
-                <td>Seen on</td>
+                <td>Quantity</td>
+                <td>Seen</td>
               </tr>
             </thead>
             <tbody>
-              {mySightings?.recentSightingsList.map((sighting) => (
-                <GetSightings sighting={sighting} />
-              ))}
+
+              {mySightings?.recentSightingsList.map((sighting) => <GetSightings sighting={sighting} key={sighting.id}/>)}
             </tbody>
           </table>
         </div>
