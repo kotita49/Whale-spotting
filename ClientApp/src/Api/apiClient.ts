@@ -69,7 +69,7 @@ export async function submitSighting(newSighting: NewSighting) {
 }
 
 export interface RecentSightingResponseList {
-  recentSightingsList:SightingResponse[];
+  recentSightingsList: SightingResponse[];
 }
 
 export async function getRecentSightings(): Promise<RecentSightingResponseList> {
@@ -79,6 +79,7 @@ export async function getRecentSightings(): Promise<RecentSightingResponseList> 
   }
   return await response.json();
 }
+
 
 export async function submitSearch(species: string, location: string, sightedAt: string, page: number, pageSize: number): Promise<null | SearchResponse> {
   const response =await fetch(
@@ -111,15 +112,15 @@ export async function confirmSighting(Id: number): Promise<SightingResponse> {
   const token = await authService.getAccessToken();
   const response = await fetch(`/admin/confirmSighting/${Id}`, {
     method: "POST",
-    headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
+      headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
   });
-
   if (!response.ok) {
     throw new Error(await response.json());
   }
 
   return await response.json();
 }
+
 
 export async function deleteSighting(Id: number) 
 {
@@ -132,7 +133,6 @@ export async function deleteSighting(Id: number)
   if (!response.ok) {
     throw new Error(await response.json());
   }
-
 
   return await response.json();
 }

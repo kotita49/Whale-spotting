@@ -1,29 +1,28 @@
 import "./Conservation.scss";
 import "bootstrap";
 import React from "react";
-import {ConservationCardData, ConservationData} from "./ConservationData";
+import { ConservationCardData, ConservationData } from "./ConservationData";
 
-function ConservationCard (data: ConservationCardData): JSX.Element {
+function ConservationCard(data: ConservationCardData): JSX.Element {
   return (
-  <div key={data.title} className="col-sm">
-  <div className="card">
-    <img src={data.imgSrc} alt={data.title}/>
-    <div className="card-body">
-      <h5 className="card-title sub-heading">{data.title}</h5>
-      <p className="card-text body-text">{data.text}</p>
-      <a href={data.siteLink} className="btn btn-primary">
-        Read more
-      </a>
+    <div key={data.title} className="col-sm">
+      <div className="card">
+        <img src={data.imgSrc} alt={data.title} />
+        <div className="card-body">
+          <h5 className="card-title sub-heading">{data.title}</h5>
+          <p className="card-text body-text">{data.text}</p>
+          <a href={data.siteLink} className="btn btn-primary">
+            Read more
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>)
+  );
 }
 
 export function Conservation(): JSX.Element {
-  
   return (
     <div className="content-container">
-
       <div className="container-fluid">
           <h1 className="title">Conservation</h1>
           <p className="text-justify body-text">
@@ -35,12 +34,9 @@ export function Conservation(): JSX.Element {
 
       <div className="container-card">
 
-        <div className="row">
-
-          {ConservationData.map(x => ConservationCard(x))}
-
+       <div className="row">
+          {ConservationData.map((x) => ConservationCard(x))}
         </div>
-
       </div>
 
       <p className="border border-dark">
@@ -54,7 +50,6 @@ export function Conservation(): JSX.Element {
         </a>
         .
       </p>
-      
     </div>
   );
 }
